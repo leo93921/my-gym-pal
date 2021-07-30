@@ -1,0 +1,7 @@
+{
+  "name": "FitnessPal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
