@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Workout started</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!doneWithAll">
+
+    <app-repeatition-panel *ngIf="currentExercise.reps" [currentExercise]="currentExercise"
+      (exerciseCompleted)="nextExercise()"></app-repeatition-panel>
+    <app-timed-panel *ngIf="currentExercise.time" [currentExercise]="currentExercise"
+      (exerciseCompleted)="nextExercise()"></app-timed-panel>
+
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+
+        <ng-container *ngFor="let exercise of exercisesToDo; let exerciseIndex = index">
+          <ion-col *ngIf="exercise.type != 'SEPARATOR' && exercise.type != 'REST'"
+            class="exercise-placeholder-container">
+            <div
+              [ngClass]="{'exercise-placeholder': true, 'completed': exercise.done, 'current': exerciseIndex == exercisesToDo.indexOf(currentExercise)}">
+            </div>
+          </ion-col>
+          <ion-col *ngIf="exercise.type == 'SEPARATOR'" class="space-placeholder-container">
+            <div class="exercise-placeholder">&nbsp;
+            </div>
+          </ion-col>
+        </ng-container>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <app-completion-panel *ngIf="doneWithAll" (exerciseCompleted)="goBack()"></app-completion-panel>
+
+
+
+</ion-content>

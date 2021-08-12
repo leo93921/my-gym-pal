@@ -1,0 +1,21 @@
+<ion-card class="ion-text-center">
+  <ion-card-header>
+    <ion-card-title>Great! </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+
+    <ion-text color="success">
+      <h1>
+        <ion-icon name="checkmark-circle-outline" class="very-big-text"></ion-icon>
+      </h1>
+    </ion-text>
+
+
+  </ion-card-content>
+</ion-card>
+
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button (click)="exerciseCompleted.emit()">
+    <ion-icon name="checkmark-circle-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

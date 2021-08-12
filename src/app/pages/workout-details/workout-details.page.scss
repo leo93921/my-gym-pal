@@ -1,0 +1,18 @@
+.exercise-placeholder {
+    background-color: #616161;
+    height: 2px;
+}
+.exercise-placeholder-container {
+    max-width: 20px;
+}
+.space-placeholder-container, .space-placeholder-container > .exercise-placeholder {
+    background-color: transparent;
+    max-width: 15px;
+}
+.completed {
+    background-color: #efefef;
+}
+
+.current {
+    background-color: brown;
+}

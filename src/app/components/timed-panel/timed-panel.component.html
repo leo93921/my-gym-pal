@@ -1,0 +1,20 @@
+<ion-card class="ion-text-center">
+  <ion-card-header>
+    <ion-card-title>{{ currentExercise.name }}</ion-card-title>
+  </ion-card-header>
+
+
+  <ion-card-content *ngIf="currentExercise.time">
+    Hold the position for
+    <ion-text color="secondary">
+      <h1>{{ countdownValue }} </h1>
+    </ion-text>
+    seconds
+  </ion-card-content>
+</ion-card>
+
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button (click)="completeExercise()">
+    <ion-icon name="checkmark-circle-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
