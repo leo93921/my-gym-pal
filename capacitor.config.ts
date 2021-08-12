@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'FitnessPal',
+  appId: 'dev.elsi.MyGymPal',
+  appName: 'MyGymPal',
   webDir: 'www',
   bundledWebRuntime: false
 };
