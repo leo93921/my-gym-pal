@@ -7,9 +7,9 @@
 <ion-content>
   <div *ngIf="!doneWithAll">
 
-    <app-repeatition-panel *ngIf="currentExercise.reps" [currentExercise]="currentExercise"
+    <app-repeatition-panel *ngIf="currentExercise && currentExercise.reps" [currentExercise]="currentExercise"
       (exerciseCompleted)="nextExercise()"></app-repeatition-panel>
-    <app-timed-panel *ngIf="currentExercise.time" [currentExercise]="currentExercise"
+    <app-timed-panel *ngIf="currentExercise && currentExercise.time" [currentExercise]="currentExercise"
       (exerciseCompleted)="nextExercise()"></app-timed-panel>
 
     <ion-grid>
