@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { WorkoutDetailsPageRoutingModule } from './workout-details-routing.module';
 
 import { WorkoutDetailsPage } from './workout-details.page';
-import { Insomnia } from '@ionic-native/insomnia/ngx';
 import { CompletionPanelComponent } from 'src/app/components/completion-panel/completion-panel.component';
 import { RepeatitionPanelComponent } from 'src/app/components/repeatition-panel/repeatition-panel.component';
 import { TimedPanelComponent } from 'src/app/components/timed-panel/timed-panel.component';
@@ -25,6 +24,6 @@ import { TimedPanelComponent } from 'src/app/components/timed-panel/timed-panel.
     RepeatitionPanelComponent,
     TimedPanelComponent
   ],
-  providers: [Insomnia]
+  providers: []
 })
 export class WorkoutDetailsPageModule { }

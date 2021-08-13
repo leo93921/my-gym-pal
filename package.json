@@ -26,7 +26,7 @@
     "@capacitor/ios": "3.1.2",
     "@capacitor/keyboard": "1.0.2",
     "@capacitor/status-bar": "1.0.2",
-    "@ionic-native/insomnia": "^5.34.0",
+    "@ionic-native/insomnia": "^5.35.0",
     "@ionic/angular": "^5.5.2",
     "cordova-plugin-insomnia": "^4.3.0",
     "rxjs": "~6.6.0",

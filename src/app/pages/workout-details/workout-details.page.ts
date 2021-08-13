@@ -51,15 +51,20 @@ export class WorkoutDetailsPage implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     if (this.platform.is("cordova")) {
-      this.insomnia.allowSleepAgain().then(() => { });
+      this.insomnia.allowSleepAgain().then(
+        () => { console.log("Device sleep allowed again") },
+        (err) => console.log(err)
+      );
     }
   }
 
   startWorkout() {
     if (this.platform.is("cordova")) {
       this.insomnia.keepAwake().then(() => {
-        this.startExercises()
-      });
+        console.log("Device won't sleep")
+        this.startExercises();
+      })
+        .catch(err => { console.error("Unable to run insomnia"); console.error(err); });
     } else {
       this.startExercises()
     }

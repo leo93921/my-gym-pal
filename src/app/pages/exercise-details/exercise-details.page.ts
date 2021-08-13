@@ -24,7 +24,7 @@ export class ExerciseDetailsPage implements OnInit {
   }
 
   public onStart(): void {
-    this.router.navigateByUrl(`/workout-details/${this.params.index}`);
+    this.router.navigate([`/workout-details/${this.params.index}`]);
   }
 
   goBack() {
