@@ -456,9 +456,18 @@ export class ExerciseService {
     return this.getTodayExercises()[index];
   }
 
-  private getTodayExercises() {
+  getAllItems(): any[] {
+    return this.listOfExercises;
+  }
+
+  getTodayExercises() {
     const currentDate = new Date();
     const todayBag = this.listOfExercises.find(item => (item.dayOfWeek == (currentDate.getDay())))
     return todayBag ? todayBag.items : [];
+  }
+
+  getItemForSpecificDay(dayOfWeek: number) {
+    const exercisesBag = this.listOfExercises.find(item => (item.dayOfWeek == (dayOfWeek)));
+    return exercisesBag ? exercisesBag.items : [];
   }
 }

@@ -19,6 +19,14 @@ const routes: Routes = [
     path: 'workout-details/:index',
     loadChildren: () => import('./pages/workout-details/workout-details.module').then(m => m.WorkoutDetailsPageModule)
   },
+  {
+    path: 'workout-planning',
+    loadChildren: () => import('./pages/workout-planning/workout-planning.module').then(m => m.WorkoutPlanningPageModule)
+  },
+  {
+    path: 'exercise-list/:dayOfWeek',
+    loadChildren: () => import('./pages/exercise-list/exercise-list.module').then(m => m.ExerciseListPageModule)
+  },
 ];
 
 @NgModule({

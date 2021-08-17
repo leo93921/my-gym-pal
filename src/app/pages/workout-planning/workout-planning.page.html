@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Workout Planning</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let item of exerciseBags" button="true" [routerLink]="['/exercise-list', item.dayOfWeek]">
+    <ion-card-content>
+      <ion-card-title>{{getNumberOfExercises(item)}} exercises</ion-card-title>
+      <ion-card-subtitle>{{daysTranslation[item.dayOfWeek]}}</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
