@@ -15,6 +15,7 @@ export class WorkoutDetailsPage implements OnInit, OnDestroy {
   repsToDo = -1;
   doneWithAll = false;
   currentExercise = null;
+  dayOfWeek: number;
 
   private exercisesToDo = [];
 
@@ -23,12 +24,13 @@ export class WorkoutDetailsPage implements OnInit, OnDestroy {
     private router: Router,
     private exerciseService: ExerciseService,
     private insomnia: Insomnia,
-    private platform: Platform,
+    private platform: Platform
   ) { }
 
   ngOnInit() {
     let params = this.route.snapshot.params;
-    const exerciseBagContainer = this.exerciseService.getItemForSpecificDay(params.dayOfWeek);
+    this.dayOfWeek = params.dayOfWeek;
+    const exerciseBagContainer = this.exerciseService.getItemForSpecificDay(this.dayOfWeek);
     this.exerciseBag = exerciseBagContainer[params.index];
 
     for (let i = 0; i < this.exerciseBag.reps; i++) {
@@ -109,6 +111,6 @@ export class WorkoutDetailsPage implements OnInit, OnDestroy {
   }
 
   goBack() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/exercise-list', this.dayOfWeek]);
   }
 }
