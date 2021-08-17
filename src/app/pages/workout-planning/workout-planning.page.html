@@ -8,8 +8,8 @@
 
   <ion-card *ngFor="let item of exerciseBags" button="true" [routerLink]="['/exercise-list', item.dayOfWeek]">
     <ion-card-content>
-      <ion-card-title>{{getNumberOfExercises(item)}} exercises</ion-card-title>
-      <ion-card-subtitle>{{daysTranslation[item.dayOfWeek]}}</ion-card-subtitle>
+      <ion-card-title>{{daysTranslation[item.dayOfWeek]}}</ion-card-title>
+      <ion-card-subtitle>{{getNumberOfExercises(item)}} exercises</ion-card-subtitle>
     </ion-card-content>
   </ion-card>
 
