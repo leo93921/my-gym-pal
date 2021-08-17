@@ -20,11 +20,12 @@ export class ExerciseDetailsPage implements OnInit {
 
   ngOnInit() {
     this.params = this.route.snapshot.params;
-    this.exerciseBag = this.exerciseService.getItem(this.params.index);
+    const exerciseBagContainer = this.exerciseService.getItemForSpecificDay(this.params.dayOfWeek);
+    this.exerciseBag = exerciseBagContainer[this.params.index];
   }
 
   public onStart(): void {
-    this.router.navigate([`/workout-details/${this.params.index}`]);
+    this.router.navigate(['/workout-details', this.params.dayOfWeek, this.params.index]);
   }
 
   goBack() {

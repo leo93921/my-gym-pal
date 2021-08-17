@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ExerciseService } from 'src/app/services/exercise.service';
 
@@ -10,7 +10,9 @@ import { ExerciseService } from 'src/app/services/exercise.service';
 export class ExerciseListPage implements OnInit {
 
   params: Params
+  dayOfWeek: number;
   exerciseList: any[];
+
 
   constructor(
     private route: ActivatedRoute,
@@ -20,6 +22,7 @@ export class ExerciseListPage implements OnInit {
 
   ngOnInit() {
     this.params = this.route.snapshot.params;
+    this.dayOfWeek = this.params.dayOfWeek;
     this.exerciseList = this.exerciseService.getItemForSpecificDay(this.params.dayOfWeek);
   }
 
@@ -43,6 +46,6 @@ export class ExerciseListPage implements OnInit {
   }
 
   goToDetails(item) {
-    this.router.navigate(['/exercise-details/' + this.exerciseList.indexOf(item)]);
+    this.router.navigate(['/exercise-details/', this.dayOfWeek, this.exerciseList.indexOf(item)]);
   }
 }

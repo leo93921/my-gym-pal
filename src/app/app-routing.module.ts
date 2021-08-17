@@ -12,11 +12,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'exercise-details/:index',
+    path: 'exercise-details/:dayOfWeek/:index',
     loadChildren: () => import('./pages/exercise-details/exercise-details.module').then(m => m.ExerciseDetailsPageModule)
   },
   {
-    path: 'workout-details/:index',
+    path: 'workout-details/:dayOfWeek/:index',
     loadChildren: () => import('./pages/workout-details/workout-details.module').then(m => m.WorkoutDetailsPageModule)
   },
   {

@@ -462,7 +462,7 @@ export class ExerciseService {
 
   getTodayExercises() {
     const currentDate = new Date();
-    const todayBag = this.listOfExercises.find(item => (item.dayOfWeek == (currentDate.getDay())))
+    const todayBag = this.listOfExercises.find(item => (item.dayOfWeek == (currentDate.getDay() + 1)))
     return todayBag ? todayBag.items : [];
   }
 

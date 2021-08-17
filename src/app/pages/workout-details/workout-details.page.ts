@@ -28,7 +28,8 @@ export class WorkoutDetailsPage implements OnInit, OnDestroy {
 
   ngOnInit() {
     let params = this.route.snapshot.params;
-    this.exerciseBag = this.exerciseService.getItem(params.index);
+    const exerciseBagContainer = this.exerciseService.getItemForSpecificDay(params.dayOfWeek);
+    this.exerciseBag = exerciseBagContainer[params.index];
 
     for (let i = 0; i < this.exerciseBag.reps; i++) {
       for (let exercise of this.exerciseBag.exercises) {

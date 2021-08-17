@@ -11,6 +11,7 @@ import { ExerciseService } from '../services/exercise.service';
 export class HomePage implements OnInit {
 
   private exercises: any[];
+  todayDate = new Date();
 
   constructor(
     private exerciseService: ExerciseService,
@@ -18,7 +19,7 @@ export class HomePage implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.exercises = this.exerciseService.getItems();
+    this.exercises = this.exerciseService.getItemForSpecificDay(this.todayDate.getDay());
   }
 
   getListHeader(exercises: any[]): string {
@@ -41,7 +42,7 @@ export class HomePage implements OnInit {
   }
 
   goToDetails(item) {
-    this.router.navigate(['/exercise-details/' + this.exercises.indexOf(item)]);
+    this.router.navigate(['/exercise-details/', this.todayDate.getDay(), this.exercises.indexOf(item)]);
   }
 
 }
