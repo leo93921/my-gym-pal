@@ -21,7 +21,6 @@ export class ExerciseListPage implements OnInit {
   ngOnInit() {
     this.params = this.route.snapshot.params;
     this.exerciseList = this.exerciseService.getItemForSpecificDay(this.params.dayOfWeek);
-    console.log(this.exerciseList);
   }
 
   getListHeader(exercises: any[]): string {
