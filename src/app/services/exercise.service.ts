@@ -6,83 +6,161 @@ import { Injectable } from '@angular/core';
 export class ExerciseService {
 
   constructor() { }
-
+  private preWorkout = [
+    {
+      exercises: [{
+        name: "Chair sit-up",
+        reps: 15,
+        type: "EXERCISE"
+      }, {
+        name: "Crunch seduto",
+        reps: 12,
+        type: "EXERCISE"
+      }, {
+        name: "Side plank & twist (dx)",
+        reps: 8,
+        type: "EXERCISE"
+      }, {
+        name: "Side plank & twist (sx)",
+        reps: 8,
+        type: "EXERCISE"
+      }],
+      reps: 4
+    }, {
+      exercises: [
+        {
+          name: "Bird dog",
+          reps: 8,
+          type: "EXERCISE"
+        }
+      ],
+      reps: 4
+    }
+  ];
+  private postWorkout = [
+    {
+      exercises: [
+        {
+          name: "Stretching pettorali",
+          time: 30,
+          type: "EXERCISE"
+        },
+        {
+          name: "Stretching dorsali",
+          time: 30,
+          type: "EXERCISE"
+        },
+        {
+          name: "Stretching deltoidi (dx)",
+          time: 15,
+          type: "EXERCISE"
+        },
+        {
+          name: "Stretching deltoidi (sx)",
+          time: 15,
+          type: "EXERCISE"
+        },
+        {
+          name: "Stretching tricipiti (dx)",
+          time: 15,
+          type: "EXERCISE"
+        },
+        {
+          name: "Stretching tricipiti (sx)",
+          time: 15,
+          type: "EXERCISE"
+        },
+        {
+          name: "Stretching avanbracci/bicipiti",
+          time: 30,
+          type: "EXERCISE"
+        },
+        {
+          name: "Stretching quadricipite destro",
+          time: 15,
+          type: "EXERCISE"
+        },
+        {
+          name: "Stretching quadricipite sinistro",
+          time: 15,
+          type: "EXERCISE"
+        },
+        {
+          name: "Stretching tricipiti femorali",
+          time: 30,
+          type: "EXERCISE"
+        },
+        {
+          name: "Stretching adduttori",
+          time: 30,
+          type: "EXERCISE"
+        },
+        {
+          name: "Stretching dorsali/gran rotondo",
+          time: 30,
+          type: "EXERCISE"
+        }
+      ],
+      reps: 1
+    }
+  ]
   private listOfExercises = [
     {
       dayOfWeek: 1,
       items: [
+        ...this.preWorkout,
         {
           exercises: [
             {
-              name: "Crunches mani unite",
+              name: "Spinte panca piana (discesa slow)",
               reps: 10,
               type: "EXERCISE"
             },
-            {
-              name: "Plank e tocco",
-              reps: 10,
-              type: "EXERCISE"
-            },
-            {
-              name: "Knee to elbow",
-              time: 40,
-              type: "EXERCISE"
-            }
           ],
-          reps: 4
-        },
-        {
-          exercises: [
-            {
-              name: "Bird dog",
-              reps: 8,
-              type: "EXERCISE"
-            }
-          ],
-          reps: 4
-        },
-        {
-          exercises: [
-            {
-              name: "Spinte 45°",
-              reps: 8,
-              type: "EXERCISE"
-            },
-            {
-              name: "Push-up (sollevato)",
-              reps: 100,
-              type: "EXERCISE"
-            }
-          ],
-          reps: 4,
+          reps: 6,
           rest: 90
         },
         {
           exercises: [
-            {
-              name: "Push-up",
-              reps: 8,
-              type: "EXERCISE"
-            },
             {
               name: "Croci 30°",
               reps: 12,
               type: "EXERCISE"
-            }
-          ],
-          reps: 4,
-          rest: 90
-        },
-        {
-          exercises: [
+            },
             {
-              name: "Croci alternate",
-              reps: 20,
+              name: "Spinte 45°",
+              reps: 8,
               type: "EXERCISE"
             }
           ],
           reps: 4,
-          rest: 45
+          rest: 60
+        },
+        {
+          exercises: [
+            {
+              name: "One-Leg Push-Up (dx)",
+              reps: 6,
+              type: "EXERCISE"
+            },
+            {
+              name: "Croci unilaterali (dx)",
+              reps: 10,
+              type: "EXERCISE"
+            },
+            {
+              name: "One-Leg Push-Up (sx)",
+              reps: 6,
+              type: "EXERCISE"
+            },
+            {
+              name: "Croci unilaterali (sx)",
+              reps: 10,
+              type: "EXERCISE"
+            }
+          ],
+          reps: 4,
+          rest: 60
         },
         {
           exercises: [
@@ -97,118 +175,8 @@ export class ExerciseService {
               type: "EXERCISE"
             }
           ],
-          reps: 4,
+          reps: 3,
           rest: 60
-        },
-        {
-          exercises: [
-            {
-              name: "Dips",
-              reps: 10,
-              type: "EXERCISE"
-            },
-            {
-              name: "French press",
-              reps: 10,
-              type: "EXERCISE"
-            }
-          ],
-          reps: 4,
-          rest: 60
-        },
-        {
-          exercises: [
-            {
-              name: "Kickack singolo",
-              reps: 15,
-              type: "EXERCISE"
-            }
-          ],
-          reps: 4,
-          rest: 60
-        }
-      ]
-    },
-    {
-      dayOfWeek: 3,
-      items: [
-        {
-          exercises: [
-            {
-              name: "Crunches mani unite",
-              reps: 10,
-              type: "EXERCISE"
-            },
-            {
-              name: "Plank e tocco",
-              reps: 10,
-              type: "EXERCISE"
-            },
-            {
-              name: "Knee to elbow",
-              time: 40,
-              type: "EXERCISE"
-            }
-          ],
-          reps: 4
-        },
-        {
-          exercises: [
-            {
-              name: "Bird dog",
-              reps: 8,
-              type: "EXERCISE"
-            }
-          ],
-          reps: 4
-        },
-        {
-          exercises: [
-            {
-              name: "Rematore 45°",
-              reps: 8,
-              type: "EXERCISE"
-            },
-            {
-              name: "Trazioni",
-              reps: 100,
-              type: "EXERCISE"
-            }
-          ],
-          reps: 4,
-          rest: 90
-        },
-        {
-          exercises: [
-            {
-              name: "Floor pull",
-              reps: 8,
-              type: "EXERCISE"
-            },
-            {
-              name: "Rematore inverso",
-              reps: 12,
-              type: "EXERCISE"
-            }
-          ],
-          reps: 4,
-          rest: 90
-        },
-        {
-          exercises: [
-            {
-              name: "Rematore singolo (destra)",
-              reps: 8,
-              type: "EXERCISE"
-            },
-            {
-              name: "Rematore singolo (sinistra)",
-              reps: 8,
-              type: "EXERCISE"
-            }
-          ],
-          reps: 4,
-          rest: 45
         },
         {
           exercises: [
@@ -216,9 +184,38 @@ export class ExerciseService {
               name: "Alzate laterali",
               reps: 10,
               type: "EXERCISE"
+            }
+          ],
+          reps: 4,
+          rest: 10
+        },
+        ...this.postWorkout
+      ]
+    },
+    {
+      dayOfWeek: 3,
+      items: [
+        ...this.preWorkout,
+        {
+          exercises: [
+            {
+              name: "Rematore 45° (discesa lenta",
+              reps: 10,
+              type: "EXERCISE"
+            }
+          ],
+          reps: 6,
+          rest: 90
+        },
+        {
+          exercises: [
+            {
+              name: "Rematore stretto",
+              reps: 10,
+              type: "EXERCISE"
             },
             {
-              name: "Alzate posteriori 90°",
+              name: "Rematore inverso",
               reps: 10,
               type: "EXERCISE"
             }
@@ -229,13 +226,13 @@ export class ExerciseService {
         {
           exercises: [
             {
-              name: "Curl 45°",
-              reps: 10,
+              name: "Trazioni",
+              reps: 8,
               type: "EXERCISE"
             },
             {
-              name: "Curl a martello",
-              reps: 10,
+              name: "Floor pull",
+              reps: 8,
               type: "EXERCISE"
             }
           ],
@@ -245,99 +242,46 @@ export class ExerciseService {
         {
           exercises: [
             {
-              name: "Curl concentrato (destra)",
+              name: "Post a 90°",
               reps: 10,
               type: "EXERCISE"
             },
             {
-              name: "Curl concentrato (sinistra)",
+              name: "Tirate mento",
               reps: 10,
               type: "EXERCISE"
             }
           ],
-          reps: 4,
-          rest: 60
+          reps: 3
         },
         {
           exercises: [
             {
-              name: "Stretching pettorali",
-              time: 30,
-              type: "EXERCISE"
-            },
-            {
-              name: "Stretching dorsali",
-              time: 30,
-              type: "EXERCISE"
-            },
-            {
-              name: "Stretching deltoidi (dx)",
-              time: 15,
-              type: "EXERCISE"
-            },
-            {
-              name: "Stretching tricipiti (sx)",
-              time: 15,
-              type: "EXERCISE"
-            },
-            {
-              name: "Stretching tricipiti (sx)",
-              time: 15,
-              type: "EXERCISE"
-            },
-            {
-              name: "Stretching avanbracci/bicipiti",
-              time: 30,
+              name: "Alzate laterali seduto",
+              reps: 10,
               type: "EXERCISE"
             }
           ],
-          reps: 1
-        }
+          reps: 3,
+          rest: 45
+        },
+        ...this.postWorkout
       ]
     },
     {
       dayOfWeek: 5,
       items: [
-        {
-          exercises: [
-            {
-              name: "Crunches mani unite",
-              reps: 10,
-              type: "EXERCISE"
-            },
-            {
-              name: "Plank e tocco",
-              reps: 10,
-              type: "EXERCISE"
-            },
-            {
-              name: "Knee to elbow",
-              time: 40,
-              type: "EXERCISE"
-            }
-          ],
-          reps: 4
-        },
-        {
-          exercises: [
-            {
-              name: "Bird dog",
-              reps: 8,
-              type: "EXERCISE"
-            }
-          ],
-          reps: 4
-        },
+        ...this.preWorkout,
         {
           exercises: [
             {
               name: "Front Squat",
-              reps: 10,
+              reps: 8,
               type: "EXERCISE"
             },
             {
               name: "Squat isometrico",
-              time: 30,
+              time: 100,
               type: "EXERCISE"
             }
           ],
@@ -347,51 +291,127 @@ export class ExerciseService {
         {
           exercises: [
             {
-              name: "Affondi avanti",
-              reps: 16,
+              name: "Bulgarian Squat (dx)",
+              reps: 8,
+              type: 0
+            },
+            {
+              name: "Bulgarian Squat (sx)",
+              reps: 8,
               type: 0
             }
           ],
-          reps: 4,
+          reps: 3,
+          rest: 45
+        },
+        {
+          exercises: [
+            {
+              name: "Affondi in camminata",
+              reps: 10,
+              type: "EXERCISE"
+            }
+          ],
+          reps: 3,
           rest: 45
         },
         {
           exercises: [
             {
               name: "Stacchi",
-              reps: 10,
+              reps: 8,
               type: "EXERCISE"
-            },
-            {
+            }, {
               name: "Leg curl isometrico",
-              time: 30,
+              time: 100,
               type: "EXERCISE"
             }
           ],
           reps: 5,
-          rest: 90
+          rest: 60
         },
         {
           exercises: [
             {
-              name: "Affondi dietro",
-              reps: 16,
-              type: "EXERCISE"
-            }
-          ],
-          reps: 4,
-          rest: 45
-        },
-        {
-          exercises: [
-            {
-              name: "Hip trust",
+              name: "Stacchi 1 gamba (dx)",
               reps: 10,
               type: "EXERCISE"
             },
             {
-              name: "Hip trust isometrico",
-              time: 30,
+              name: "Stacchi 1 gamba (sx)",
+              reps: 10,
+              type: "EXERCISE"
+            }
+          ],
+          reps: 3,
+          rest: 45
+        },
+        {
+          exercises: [
+            {
+              name: "One Leg Hip Trust (sx)",
+              reps: 10,
+              type: "EXERCISE"
+            }, {
+              name: "One Leg Hip Trust (dx)",
+              reps: 10,
+              type: "EXERCISE"
+            }, {
+              name: "One Leg Hip Trust Isometrico (sx)",
+              time: 100,
+              type: "EXERCISE"
+            }, {
+              name: "One Leg Hip Trust Isometrico (dx)",
+              time: 100,
+              type: "EXERCISE"
+            }
+          ],
+          reps: 4
+        },
+        ...this.postWorkout
+      ]
+    },
+    {
+      dayOfWeek: 6,
+      items: [
+        ...this.preWorkout,
+        {
+          exercises: [
+            {
+              name: "French Press",
+              reps: 8,
+              type: "EXERCISE"
+            },
+            {
+              name: "Dips",
+              reps: 12,
+              type: "EXERCISE"
+            }
+          ],
+          reps: 4,
+          rest: 60
+        },
+        {
+          exercises: [
+            {
+              name: "Curl",
+              reps: 8,
+              type: "EXERCISE"
+            },
+            {
+              name: "Curl su panca 45°",
+              reps: 12,
+              type: "EXERCISE"
+            }
+          ],
+          reps: 4,
+          rest: 60
+        },
+        {
+          exercises: [
+            {
+              name: "Curl concentrato",
+              reps: 10,
               type: "EXERCISE"
             }
           ],
@@ -401,49 +421,43 @@ export class ExerciseService {
         {
           exercises: [
             {
-              name: "Calf singolo",
-              reps: 20,
+              name: "Curl Isometrico",
+              time: 100,
               type: "EXERCISE"
             }
           ],
-          reps: 4,
-          rest: 30
+          reps: 3
         },
         {
           exercises: [
             {
-              name: "Stretching quadricipite destro",
-              time: 15,
+              name: "Kickback Singolo (dx)",
+              reps: 15,
               type: "EXERCISE"
             },
             {
-              name: "Stretching quadricipite sinistro",
-              time: 15,
-              type: "EXERCISE"
-            },
-            {
-              name: "Stretching tricipiti femorali",
-              time: 30,
-              type: "EXERCISE"
-            },
-            {
-              name: "Stretching adduttori",
-              time: 30,
-              type: "EXERCISE"
-            },
-            {
-              name: "Stretching adduttori",
-              time: 30,
-              type: "EXERCISE"
-            },
-            {
-              name: "Stretching dorsali/gran rotondo",
-              time: 30,
+              name: "Kickback Singolo (sx)",
+              reps: 15,
               type: "EXERCISE"
             }
           ],
-          reps: 1
-        }
+          reps: 4
+        },
+        {
+          exercises: [
+            {
+              name: "Calf singolo (dx)",
+              reps: 10,
+              type: "EXERCISE"
+            }, {
+              name: "Calf singolo (sx)",
+              reps: 10,
+              type: "EXERCISE"
+            }
+          ],
+          reps: 3
+        },
+        ...this.postWorkout
       ]
     }
   ];
