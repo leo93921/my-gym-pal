@@ -31,6 +31,28 @@
     </ion-grid>
   </div>
 
+  <ng-container *ngIf="nextExerciseToDo">
+    <ion-card class="ion-text-center" style="opacity: 0.7;">
+      <ion-card-header>
+        <ion-card-title>Next: {{ nextExerciseToDo.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content *ngIf="nextExerciseToDo.reps">
+        Execute this
+        <ion-text color="secondary">
+          <h1>{{ nextExerciseToDo.reps }} </h1>
+        </ion-text>
+        times
+      </ion-card-content>
+      <ion-card-content *ngIf="nextExerciseToDo.time">
+        Execute this for
+        <ion-text color="secondary">
+          <h1>{{ nextExerciseToDo.time }} </h1>
+        </ion-text>
+        seconds
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
   <app-completion-panel *ngIf="doneWithAll" (exerciseCompleted)="goBack()"></app-completion-panel>
 
 

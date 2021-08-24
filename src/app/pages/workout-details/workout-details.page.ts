@@ -15,6 +15,7 @@ export class WorkoutDetailsPage implements OnInit, OnDestroy {
   repsToDo = -1;
   doneWithAll = false;
   currentExercise = null;
+  nextExerciseToDo = null
   dayOfWeek: number;
 
   private exercisesToDo = [];
@@ -28,6 +29,7 @@ export class WorkoutDetailsPage implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
+    console.log("created");
     let params = this.route.snapshot.params;
     this.dayOfWeek = params.dayOfWeek;
     const exerciseBagContainer = this.exerciseService.getItemForSpecificDay(this.dayOfWeek);
@@ -53,12 +55,13 @@ export class WorkoutDetailsPage implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (this.platform.is("cordova")) {
+    console.log("destroyed");
+    /*if (this.platform.is("cordova")) {
       this.insomnia.allowSleepAgain().then(
         () => { console.log("Device sleep allowed again") },
         (err) => console.log(err)
       );
-    }
+    }*/
   }
 
   startWorkout() {
@@ -104,10 +107,21 @@ export class WorkoutDetailsPage implements OnInit, OnDestroy {
       this.currentExercise = this.exercisesToDo[currentExerciseIndex];
       if (this.currentExercise.type == "SEPARATOR") {
         this.nextExercise();
+      } else {
+        this.nextExerciseToDo = this.getNextValidExercise(currentExerciseIndex);
       }
     } else {
       this.doneWithAll = true
     }
+  }
+
+  private getNextValidExercise(currentExerciseIndex) {
+    for (let i = currentExerciseIndex + 1; i < this.exercisesToDo.length; i++) {
+      if (this.exercisesToDo[i].type == "EXERCISE") {
+        return this.exercisesToDo[i];
+      }
+    }
+    return {};
   }
 
   goBack() {
