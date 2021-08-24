@@ -23,6 +23,14 @@
       Hold the position for {{ exercise.time }} seconds
     </ion-card-content>
   </ion-card>
+  <ion-card *ngIf="exerciseBag.rest">
+    <ion-card-header>
+      <ion-card-title>Rest</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ exerciseBag.rest }} seconds
+    </ion-card-content>
+  </ion-card>
 
   <div style="text-align: center;">
     <ion-button shape="round" horizontal="center" vertical="end" slot="fixed" (click)="onStart()">Start</ion-button>
